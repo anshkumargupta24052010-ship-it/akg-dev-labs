@@ -1112,7 +1112,6 @@
         }
         body.theme-dark .service-card,
         body.theme-dark .feedback-item,
-        body.theme-dark .chatbot-messages,
         body.theme-dark .admin-project-item,
         body.theme-dark .admin-feedback-item {
             background: #1f2937;
@@ -1121,7 +1120,7 @@
         body.theme-dark textarea,
         body.theme-dark select,
         body.theme-dark .admin-modal,
-        body.theme-dark .chatbot-footer {
+        body.theme-dark .admin-modal {
             background: #111827;
             color: #f8fafc;
         }
@@ -1444,160 +1443,6 @@
         }
 
         /* ==============================================================
-                   CHATBOT
-                   ============================================================== */
-        .chatbot-toggle {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-            color: #fff;
-            border: none;
-            box-shadow: 0 8px 30px rgba(6, 182, 212, 0.4);
-            font-size: 1.8rem;
-            cursor: pointer;
-            z-index: 1000;
-            transition: var(--transition-bounce);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .chatbot-toggle:hover {
-            transform: scale(1.1) rotate(-8deg);
-        }
-        .chatbot-window {
-            position: fixed;
-            bottom: 110px;
-            right: 30px;
-            width: 380px;
-            max-height: 520px;
-            background: var(--bg-white);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-xl);
-            border: 1px solid #e2e8f0;
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-            z-index: 1000;
-            animation: slideUp 0.3s ease;
-        }
-        .chatbot-window.open {
-            display: flex;
-        }
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-        .chatbot-header {
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-            color: #fff;
-            padding: 14px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .chatbot-header h4 {
-            font-weight: 600;
-        }
-        .chatbot-header .close-bot {
-            background: none;
-            border: none;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.4rem;
-            cursor: pointer;
-        }
-        .chatbot-messages {
-            padding: 16px 20px;
-            overflow-y: auto;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-height: 340px;
-            background: #fafafa;
-        }
-        .chatbot-messages .msg {
-            max-width: 85%;
-            padding: 10px 16px;
-            border-radius: 14px;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            animation: fadeInMsg 0.3s ease;
-        }
-        @keyframes fadeInMsg {
-            from {
-                opacity: 0;
-                transform: translateY(8px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .chatbot-messages .msg.bot {
-            background: var(--bg-white);
-            border: 1px solid #e2e8f0;
-            border-bottom-left-radius: 4px;
-            align-self: flex-start;
-        }
-        .chatbot-messages .msg.user {
-            background: var(--primary-blue);
-            color: #fff;
-            border-bottom-right-radius: 4px;
-            align-self: flex-end;
-        }
-        .chatbot-messages .msg.typing {
-            background: var(--bg-white);
-            border: 1px solid #e2e8f0;
-            align-self: flex-start;
-            color: var(--text-light);
-        }
-        .chatbot-footer {
-            padding: 12px 16px;
-            border-top: 1px solid #e2e8f0;
-            display: flex;
-            gap: 8px;
-            background: #fff;
-        }
-        .chatbot-footer input {
-            flex: 1;
-            padding: 10px 14px;
-            border: 1.5px solid #e2e8f0;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-family: 'Inter', sans-serif;
-            transition: var(--transition-smooth);
-        }
-        .chatbot-footer input:focus {
-            outline: none;
-            border-color: var(--primary-blue);
-        }
-        .chatbot-footer button {
-            background: var(--primary-blue);
-            color: #fff;
-            border: none;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-        }
-        .chatbot-footer button:hover {
-            background: var(--primary-dark);
-            transform: scale(1.05);
-        }
-
-        /* ==============================================================
                    RESPONSIVE
                    ============================================================== */
         @media (max-width: 1024px) {
@@ -1647,11 +1492,6 @@
             .feedback-wrapper {
                 padding: 30px;
             }
-            .chatbot-window {
-                width: 320px;
-                right: 16px;
-                bottom: 100px;
-            }
             .admin-modal {
                 padding: 30px 24px;
             }
@@ -1699,18 +1539,6 @@
             .hero-stats {
                 flex-direction: column;
                 gap: 12px;
-            }
-            .chatbot-window {
-                width: 290px;
-                right: 10px;
-                bottom: 90px;
-            }
-            .chatbot-toggle {
-                width: 54px;
-                height: 54px;
-                font-size: 1.5rem;
-                bottom: 20px;
-                right: 20px;
             }
             .admin-modal {
                 padding: 20px 16px;
@@ -1788,7 +1616,6 @@
                 <div class="hero-visual">
                     <div class="illustration">
                         <span class="floating-icons"><i class="fas fa-code"></i></span>
-                        <span class="floating-icons"><i class="fas fa-robot"></i></span>
                         <span class="floating-icons"><i class="fas fa-chart-line"></i></span>
                         <span style="font-size:5rem;color:var(--accent-cyan);z-index:2;position:relative;">&lt;/&gt;</span>
                     </div>
@@ -1838,7 +1665,6 @@
                 <div class="service-card"><div class="icon"><i class="fas fa-paint-brush"></i></div><h3>UI/UX Design</h3><p>User-centric design that enhances engagement and conversion.</p></div>
                 <div class="service-card"><div class="icon"><i class="fas fa-bullhorn"></i></div><h3>Digital Marketing</h3><p>SEO, social media, PPC, and content marketing to grow your brand.</p></div>
                 <div class="service-card"><div class="icon"><i class="fas fa-cloud"></i></div><h3>Cloud Solutions</h3><p>AWS, Azure, and Google Cloud integration for scalability.</p></div>
-                <div class="service-card" id="aiService"><div class="icon"><i class="fas fa-robot"></i></div><h3>AI &amp; Chatbots</h3><p>Intelligent chatbots and AI-powered automation for your business.</p></div>
             </div>
         </div>
     </section>
@@ -1986,24 +1812,6 @@
             <p style="font-size:0.8rem;margin-top:4px;color:rgba(255,255,255,0.3);">Built with ❤️ by Ansh Kumar Gupta</p>
         </div>
     </footer>
-
-    <!-- ===== CHATBOT ===== -->
-    <button class="chatbot-toggle" id="chatToggle" aria-label="Chat with AI">
-        <i class="fas fa-comment-dots"></i>
-    </button>
-    <div class="chatbot-window" id="chatWindow">
-        <div class="chatbot-header">
-            <h4><i class="fas fa-robot"></i> AKG AI</h4>
-            <button class="close-bot" id="chatClose"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="chatbot-messages" id="chatMessages">
-            <div class="msg bot">👋 Hi! I'm Ansh's AI assistant. Ask me about my services, projects, or anything else!</div>
-        </div>
-        <div class="chatbot-footer">
-            <input type="text" id="chatInput" placeholder="Ask a question..." />
-            <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
-        </div>
-    </div>
 
     <!-- ===== ADMIN LOGIN & PANEL ===== -->
     <div class="admin-overlay" id="adminOverlay">
@@ -2741,80 +2549,14 @@
             let autoIndex = 0;
             document.querySelectorAll('header, section, footer').forEach(area => {
                 area.querySelectorAll('h1, h2, h3, h4, p, .label, .lbl, .subtitle, .nav-links a, .contact-item strong, footer span').forEach(el => {
-                    if (el.closest('#projectsGrid, #teamGrid, #feedbackList, #chatWindow, #floatingToolbar') || el.closest('[data-editable]')) return;
+                    if (el.closest('#projectsGrid, #teamGrid, #feedbackList, #floatingToolbar') || el.closest('[data-editable]')) return;
                     el.dataset.editable = el.dataset.editable || `autoText${autoIndex++}`;
                 });
             });
         }
 
-        // ============================================================== 
-        // 8. CHATBOT (safe local responses)
-        // ============================================================== 
-        const chatToggle = document.getElementById('chatToggle');
-        const chatWindow = document.getElementById('chatWindow');
-        const chatClose = document.getElementById('chatClose');
-        const chatInput = document.getElementById('chatInput');
-        const chatSend = document.getElementById('chatSend');
-        const chatMessages = document.getElementById('chatMessages');
-
-        chatToggle.addEventListener('click', () => {
-            chatWindow.classList.toggle('open');
-            if (chatWindow.classList.contains('open')) chatInput.focus();
-        });
-        chatClose.addEventListener('click', () => chatWindow.classList.remove('open'));
-
-        function addMessage(text, sender) {
-            const div = document.createElement('div');
-            div.className = `msg ${sender}`;
-            div.textContent = text;
-            chatMessages.appendChild(div);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function getLocalReply(message) {
-            const normalizedMessage = message.toLowerCase();
-            if (normalizedMessage.includes('service')) {
-                return 'AKG Dev Labs provides web development, mobile apps, UI/UX design, digital marketing, cloud solutions, and AI chatbot services.';
-            }
-            if (normalizedMessage.includes('project') || normalizedMessage.includes('work')) {
-                return 'You can explore our projects in the Work section or contact us to discuss a new project.';
-            }
-            if (normalizedMessage.includes('contact') || normalizedMessage.includes('email')) {
-                return 'Email akgdevlabs@gmail.com or call/WhatsApp +91 8109944185.';
-            }
-            if (normalizedMessage.includes('location') || normalizedMessage.includes('where')) {
-                return 'AKG Dev Labs is based in Ambikapur, Chhattisgarh.';
-            }
-            return 'I can help with services, projects, contact details, and location. Please choose one of those topics or contact AKG Dev Labs directly.';
-        }
-
-        async function sendMessage() {
-            const message = chatInput.value.trim();
-            if (!message) return;
-            addMessage(message, 'user');
-            chatInput.value = '';
-            chatInput.disabled = true;
-            chatSend.disabled = true;
-
-            const typingDiv = document.createElement('div');
-            typingDiv.className = 'msg typing';
-            typingDiv.textContent = '⏳ Thinking...';
-            chatMessages.appendChild(typingDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-
-            const reply = getLocalReply(message);
-            chatMessages.removeChild(typingDiv);
-            addMessage(reply, 'bot');
-            chatInput.disabled = false;
-            chatSend.disabled = false;
-            chatInput.focus();
-        }
-
-        chatSend.addEventListener('click', sendMessage);
-        chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
-
         // ==============================================================
-        // 9. SMOOTH SCROLL
+        // 8. SMOOTH SCROLL
         // ==============================================================
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
